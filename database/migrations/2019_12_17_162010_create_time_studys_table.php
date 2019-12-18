@@ -15,7 +15,7 @@ class CreateTimeStudysTable extends Migration
     {
         Schema::create('timeStudys', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('status',[ ]);
+            $table->enum('status',['M','A','E']);
             $table->text('description');
             $table->date('time_start');
             $table->date('time_end');

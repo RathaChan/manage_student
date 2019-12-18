@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="{{asset('/dashboard')}}/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- custom yourself -->
+
+    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -36,6 +40,8 @@
         <section class="content">
             @yield('list')
             @yield('create_student')
+            @yield('attendance')
+            @yield('create_attendance')
             <div class="container-fluid">
                 @yield('show')
             </div>
@@ -52,9 +58,9 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{asset('/dashboard')}}/plugins/jquery/jquery.min.js"></script>
+<script src="{{asset('/dashboard/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{asset('/dashboard')}}/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{asset('/dashboard/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button)

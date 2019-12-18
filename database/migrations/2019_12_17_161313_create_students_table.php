@@ -15,19 +15,19 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string(' code');
+            $table->string('student_code');
             $table->string('image');
             $table->string('first_name');
             $table->string('last_name');
-            $table->enum('gender',['male','female']);
-            $table->date('dob');
-            $table->string('address');
-            $table->string('email');
-            $table->integer(' generation');
-            $table->integer('major_id');
-            $table->integer('time_study_id');
-            $table->integer('attendance_id');
-            $table->enum('action',['enable','disable']);
+            $table->string('gender');
+//            $table->date('dob');
+//            $table->string('address');
+//            $table->string('email');
+//            $table->integer(' generation');
+//            $table->integer('major_id');
+//            $table->integer('time_study_id');
+//            $table->integer('attendance_id');
+//            $table->enum('action',['enable','disable']);
 
             $table->timestamps();
         });

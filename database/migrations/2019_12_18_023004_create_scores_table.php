@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAttendancesTable extends Migration
+class CreateScoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateAttendancesTable extends Migration
      */
     public function up()
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('scores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('date');
-            $table->integer('student_id');
-            $table->string('status');
-            $table->text('reason');
+            $table->double('attendance');
+            $table->double('homework');
+            $table->double('mid_term');
+            $table->double('assignment');
+            $table->double('final');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateAttendancesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('scores');
     }
 }

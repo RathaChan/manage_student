@@ -22,6 +22,14 @@ Route::get('/master', function () {
 Route::get('/show', function () {
     return view('content.show');
 });
+Route::get('/students/attendance', 'AttendanceController@index');
+Route::get('/students/attendance/create', 'AttendanceController@index1');
+Route::get('/attendance/create', 'AttendanceController@create');
+Route::post('attendance', 'AttendanceController@store');
+//Route::post('/students/attendance/create', 'AttendanceController@create');
+
+
 Route::resource('students', 'StudentController');
-//Route::post('/students/create', 'StudentController@create');
-//Route::get('/students', 'StudentController@store');
+//Route::resource('attendances', 'AttendanceController');
+
+
