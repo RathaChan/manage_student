@@ -3,65 +3,63 @@
 @section('create_attendance')
 
     @if (session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success ">
             {{ session('success') }}
         </div>
     @endif
 
-    <form action="{{url('attendance/store')}}" method="POST" id="form_add" >
-        @csrf
-        <input type="hidden" name="attendent_student" value="">
-        <div class="card card-warning">
-            <div class="card-header">
-                <h3 class="card-title"></h3>
-            </div>
-            <div class="card-body">
-                <td>
-                    <label for="">Date:</label>
-                    <input type="date" name="date" class="" placeholder="date" id="date">
-                </td>
-                <td>
-                    <label for="">Student Name:</label>
-                    <select name="student_select" id="student_select" class="field-search" title="all students">
-                        @foreach($student as $students)
-                        <option value="{{$students->id}}">{{$students->first_name}} {{$students->last_name}}</option>
-{{--                        <option value="">World</option>--}}
-                            @endforeach
-                    </select>
-                </td>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <!-- text input -->
-                            <div class="form-group">
-                                <label for="">Status: </label>
-                                <select name="status_select" id="status_select" class="field-search">
-                                    <option value="absent">Absent</option>
-                                    <option value="permission">Permission</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <!-- textarea -->
-                            <div class="form-group right">
-                                <label>Reason</label>
-                                <textarea id="reason" class="form-control" rows="3" placeholder="reason........lazy"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-            </div>
-            <div>
-                <td>
-                    <button type="button" id="btn-add" class="btn btn-block btn-info col-sm-2" value="add" onclick="AddData()">Add</button>
-                    <button type="submit" class="btn btn-block btn-success col-sm-2" name="action" value="summit" formaction="{{url('attendance/store')}}">Summit</button>
-                </td>
-
-            </div>
-
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Create Attendance Student</h3>
         </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form action="{{url('attendance/store')}}" method="POST" id="form_add">
+            @csrf
+            <input type="hidden" name="attendent_student" value="">
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Date:</label>
+                    <div class="col-sm-10">
+                        <input type="date" name="date" class="" placeholder="date" id="date" value="{{}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Student Name:</label>
+                    <div class="col-sm-10">
+                        <select name="student_select" id="student_select" class="field-search" title="all students">
+                            @foreach($student as $students)
+                                <option value="{{$students->id}}">{{$students->first_name}} {{$students->last_name}}</option>
+                                {{--                        <option value="">World</option>--}}
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Status:</label>
+                    <div class="col-sm-10">
+                        <select name="status_select" id="status_select" class="field-search">
+                            <option value="absent">Absent</option>
+                            <option value="permission">Permission</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Reason:</label>
+                    <div class="col-sm-10">
+                        <textarea id="reason" class="form-control" rows="3" placeholder="............"></textarea>
+
+                    </div>
+                </div>
+
+            </div>
+             <div class="card-footer">
+                 <button type="button" id="btn-add"  class="btn btn-info" value="add" onclick="AddData()">Add</button>
+                 <button type="submit" class="btn btn-success float-right" name="action" value="summit" formaction="{{url('attendance/store')}}">Summit</button>
+             </div>
     </form>
+    </div>
+
 @include('content.list_add')
 {{--@include('content.attendance')--}}
 @endsection
@@ -143,21 +141,6 @@
         });
 
 
-        // var table = document.getElementById("table"),rIndex;
-        //
-        // for(var i = 1; i < table.rows.length; i++)
-        // {
-        //     table.rows[i].onclick = function()
-        //     {
-        //         rIndex = this.rowIndex;
-        //         console.log(rIndex);
-        //
-        //         document.getElementById("date").value = this.cells[0].innerHTML;
-        //         document.getElementById("student_select").value = this.cells[1].innerHTML;
-        //         document.getElementById("reason").value = this.cells[2].innerHTML;
-        //         document.getElementById("status_select").value = this.cells[3].innerHTML;
-        //     };
-        // }
 
     </script>
 @endsection

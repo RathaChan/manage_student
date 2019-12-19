@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Image" autocomplete="off" name="image" value="{{old('image')}}">
+                            <input type="text" class="form-control" placeholder="image" autocomplete="off" name="image" value="{{old('image')}}">
                             @error('image')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>

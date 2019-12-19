@@ -37,7 +37,7 @@
                             <td>{{$attend->students->first_name}} {{$attend->students->last_name}}</td>
                             <td>{{$attend->reason}}</td>
                             <td>{{$attend->status}}</td>
-                            <td><a href="#">Edit</a></td>
+                            <td><a href="{{url('student/attendance/edit')}}">Edit</a></td>
                         </tr>
 
                         @endforeach

@@ -13,6 +13,11 @@ class AttendanceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function editAttend(){
+        $attends = Attendance::with('students')->get();
+        return view('content.edit_attend',compact('attends'));
+    }
+
     public function index()
     {
         $attends = Attendance::with('students')->get();

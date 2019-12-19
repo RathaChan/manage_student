@@ -27,6 +27,7 @@ Route::get('/students/attendance/create', 'AttendanceController@index1');
 Route::get('/attendance/create', 'AttendanceController@create');
 Route::post('attendance/store', 'AttendanceController@store');
 Route::get('/attendance/list_add', 'AttendanceController@getData');
+Route::get('student/attendance/edit', 'AttendanceController@editAttend');
 
 //Route::post('/students/attendance/create', 'AttendanceController@create');
 
