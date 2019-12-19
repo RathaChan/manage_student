@@ -25,11 +25,13 @@ Route::get('/show', function () {
 Route::get('/students/attendance', 'AttendanceController@index');
 Route::get('/students/attendance/create', 'AttendanceController@index1');
 Route::get('/attendance/create', 'AttendanceController@create');
-Route::post('attendance', 'AttendanceController@store');
+Route::post('attendance/store', 'AttendanceController@store');
+Route::get('/attendance/list_add', 'AttendanceController@getData');
+
 //Route::post('/students/attendance/create', 'AttendanceController@create');
 
 
-Route::resource('students', 'StudentController');
 //Route::resource('attendances', 'AttendanceController');
+Route::resource('students', 'StudentController');
 
 

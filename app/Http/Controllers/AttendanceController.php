@@ -15,13 +15,18 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $student = Students::all();
-        return view('content.attendance',compact('student'));
+        $attends = Attendance::with('students')->get();
+//        dd($attends);
+        return view('content.attendance',compact('attends'));
     }
     public function index1()
     {
         $student = Students::all();
         return view('content.create_attendance',compact('student'));
+    }
+    public function getData(){
+
+        return view('content.list_add');
     }
 
     /**
@@ -42,13 +47,45 @@ class AttendanceController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $params = $request->all();
+
+        $attent_students = json_decode($params['attendent_student']);
+        $attents = [];
+        foreach ($attent_students as $attent_student){
+            $attents[] = [
+                        'date'       => date('Y-m-d',strtotime($attent_student->date)),
+                        'status'     => $attent_student->status,
+                        'reason'     => $attent_student->reason,
+                        'student_id' => $attent_student->student_id
+                ];
+        }
+        \App\Attendance::insert($attents);
+        return back()->with('success','successfully');
+//        dd($attent_students[0]->status);
+        return 'hello';
+//        $data = $request->validate([
+//            'date'=>'required',
+//            'student_id'=>'required',
+//            'status'=>'required',
+//            'reason'=>'required',
+//        ]);
+//        if ($_POST['action'] == 'add'){
+//return 'hello';
+////            return view('content.list_add', compact('data'));
+//        }else{
+////            $data = $request->all();
+////                    Attendance::create($data);
+////        return redirect()->back();
+//            return 'hi';
+//
+//        }
+
 //        dd($request->all());
 //        return 'hello';
 
 //        Attendance::create($data);
 //        return redirect(url('/students/attendance'));
-        return  view('content.list_add',compact('data'));
+//        return  view('content.list_add',compact('data'));
     }
 
     /**

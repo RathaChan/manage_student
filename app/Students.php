@@ -19,9 +19,8 @@ class Students extends Model
 //
 //}
     public function attendance(){
-        return $this->belongsTo('App\Attendance', 'student_id');
-
-}
+        return $this->hasMany('App\Attendance', 'student_id');
+    }
 //
 //    public function room(){
 //        return $this->belongsToMany('App\Room', 'student_rooms','student_id','room_id');

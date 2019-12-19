@@ -1,4 +1,5 @@
 @extends('dashboard.master')
+@section('title', 'list student')
 @section('list')
 
 

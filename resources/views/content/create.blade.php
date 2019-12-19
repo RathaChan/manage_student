@@ -1,4 +1,5 @@
 @extends('dashboard.master')
+@section('title', 'create student')
 
 @section('create_student')
     <div class="card card-warning">

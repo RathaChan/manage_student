@@ -15,30 +15,17 @@
 
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
+                <table class="table table-hover" id="list">
                     <thead>
                     <tr>
-                        <th>ID</th>
                         <th>date</th>
                         <th>Name</th>
                         <th>Reason</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @forelse($data as $datas)
-                        <tr>
-                            <td>{{$datas->id}}</td>
-                            <td>{{$datas->date}}</td>
-                            <td>{{$datas->name}}</td>
-                            <td>{{$datas->status}}</td>
-                            <td>{{$datas->reason}}</td>
-                        </tr>
-
-
-                        @empty
-                        no record
-                        @endforelse
 
                     </tbody>
                 </table>

@@ -1,9 +1,6 @@
 @extends('dashboard.master')
+@section('title', 'student attendance')
 @section('attendance')
-
-
-
-
 
     <div class="row">
         <div class="col-12">
@@ -29,9 +26,21 @@
                             <th>Name</th>
                             <th>Reason</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($attends as $attend)
+                        <tr>
+                            <td>{{$attend->id}}</td>
+                            <td>{{$attend->date}}</td>
+                            <td>{{$attend->students->first_name}} {{$attend->students->last_name}}</td>
+                            <td>{{$attend->reason}}</td>
+                            <td>{{$attend->status}}</td>
+                            <td><a href="#">Edit</a></td>
+                        </tr>
+
+                        @endforeach
 
                         </tbody>
                     </table>

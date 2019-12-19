@@ -9,11 +9,11 @@ class Attendance extends Model
     protected $table = 'attendances';
     protected $fillable = [
         'date',
-        ' status',
+        'status',
         'reason',
-
+        'student_id'
     ];
-    public function student(){
-        return $this->hasMany('App\Student', 'student_id');
+    public function students(){
+        return $this->belongsTo('App\Students', 'student_id');
     }
 }
