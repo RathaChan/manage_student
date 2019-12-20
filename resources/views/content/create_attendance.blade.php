@@ -11,6 +11,8 @@
     <div class="card card-info">
         <div class="card-header">
             <h3 class="card-title">Create Attendance Student</h3>
+            <a  href="{{url('/students/attendance')}}" type="button" id="btn-add"  class="btn btn-warning float-right">Attendance</a>
+
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -21,7 +23,7 @@
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Date:</label>
                     <div class="col-sm-10">
-                        <input type="date" name="date" class="" placeholder="date" id="date" value="{{}}">
+                        <input type="date" name="date" class="" placeholder="date" id="date" value="">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -30,7 +32,7 @@
                         <select name="student_select" id="student_select" class="field-search" title="all students">
                             @foreach($student as $students)
                                 <option value="{{$students->id}}">{{$students->first_name}} {{$students->last_name}}</option>
-                                {{--                        <option value="">World</option>--}}
+{{--                                                        <option value="">World</option>--}}
                             @endforeach
                         </select>
                     </div>
@@ -56,6 +58,7 @@
              <div class="card-footer">
                  <button type="button" id="btn-add"  class="btn btn-info" value="add" onclick="AddData()">Add</button>
                  <button type="submit" class="btn btn-success float-right" name="action" value="summit" formaction="{{url('attendance/store')}}">Summit</button>
+                 <button type="button" id="btn-add"  class="btn btn-secondary center-bloc" value="add" onclick="reset()" style="margin: 10px">Reset</button>
              </div>
     </form>
     </div>
@@ -139,8 +142,9 @@
                 });
             });
         });
-
-
+        function reset() {
+            document.getElementById("form_add").reset();
+        }
 
     </script>
 @endsection

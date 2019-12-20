@@ -6,6 +6,7 @@ use App\Students;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\DocBlock\Tags\Reference\Url;
+use Symfony\Component\Console\Input\Input;
 
 class StudentController extends Controller
 {
@@ -14,10 +15,16 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $student = Students::all();
-        return view('content.list', compact('student'));
+        if(isset($request->s))
+        {
+            $students = Students::where('first_name','LIKE',"%$request->s%")->orWhere('last_name','LIKE',"%$request->s%")
+                ->orWhere('gender','LIKE',"$request->s%")->get();
+        }else {
+            $students = Students::all();
+        }
+        return view('content.list', compact('students'));
     }
 
     /**
@@ -57,7 +64,7 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(Students $student)
     {
         //
     }
@@ -68,9 +75,10 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(Students $student)
     {
-        //
+        return view('content.edit_student',compact('student'));
+
     }
 
     /**
@@ -80,9 +88,13 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, Students $student)
     {
-        //
+        $params = $request->all();
+//        dd($params);
+        $student->update($params);
+        return redirect('/students')->with('success','successfully');
+
     }
 
     /**
@@ -91,8 +103,9 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Students $student)
     {
-        //
+        $student->delete();
+        return redirect('/students')->with('success','successfully');
     }
 }

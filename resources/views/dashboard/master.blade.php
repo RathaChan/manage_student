@@ -43,6 +43,9 @@
             @yield('attendance')
             @yield('create_attendance')
             @yield('edit_attend')
+            @yield('edit_student')
+            @yield('delete_student')
+
             <div class="container-fluid">
                 @yield('show')
             </div>

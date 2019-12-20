@@ -27,12 +27,18 @@ Route::get('/students/attendance/create', 'AttendanceController@index1');
 Route::get('/attendance/create', 'AttendanceController@create');
 Route::post('attendance/store', 'AttendanceController@store');
 Route::get('/attendance/list_add', 'AttendanceController@getData');
-Route::get('student/attendance/edit', 'AttendanceController@editAttend');
+Route::get('/attendance/{attend}/edit', 'AttendanceController@editAttend');
+Route::put('/attendance/{attend}', 'AttendanceController@update');
+Route::get('/attendance/{attend}', 'AttendanceController@destroy');
 
 //Route::post('/students/attendance/create', 'AttendanceController@create');
 
 
 //Route::resource('attendances', 'AttendanceController');
 Route::resource('students', 'StudentController');
+//Route::get('/students/{student}/edit', 'StudentController@edit');
+Route::get('/students/{student}', 'StudentController@destroy');
+Route::get('/students/search', 'StudentController@scopeSearch');
+
 
 

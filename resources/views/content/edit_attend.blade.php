@@ -7,46 +7,54 @@
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form action="#" >
+{{--    @foreach($attends as $attend)--}}
+{{--    @endforeach--}}
+    @foreach($student as $students)
+
+    @endforeach
+    <form action="/attendance/{{$attend->id}}"  method="POST">
+        @method('PUT')
         @csrf
-        <input type="hidden" name="attendent_student" value="">
         <div class="card-body">
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Date:</label>
                 <div class="col-sm-10">
-                    <input type="date" name="date" class="" placeholder="date" id="date">
+                    <input type="date" name="date" class="" placeholder="date" id="date" value="{{$attend->date}}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Student Name:</label>
                 <div class="col-sm-10">
-                    <select name="student_select" id="student_select" class="field-search" title="all students">
-
+                    <select name="student_select" id="student_select" class="field-search" title="all students" value="">
+                        <option value="{{$attend->id}}">{{$attend->students->first_name}} {{$attend->students->last_name}}</option>
                     </select>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Status:</label>
                 <div class="col-sm-10">
-                    <select name="status_select" id="status_select" class="field-search">
-                        <option value="absent">Absent</option>
-                        <option value="permission">Permission</option>
+                    <select name="status" id="status_select" class="field-search">
+                        @foreach(['absent','permission'] as $status)
+                            <option {{$attend->status == $status ? 'selected' : '' }} value="{{$status}}">{{$status}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Reason:</label>
                 <div class="col-sm-10">
-                    <textarea id="reason" class="form-control" rows="3" placeholder="............"></textarea>
-
+{{--                    <input type="textarea" id="reason" class="form-control" rows="3" placeholder="............" value="{{$attend->reason}}"></input>--}}
+                    <textarea name="reason" id="reason" class="form-control" rows="3" id="comment">{{$attend->reason}}</textarea>
                 </div>
             </div>
 
         </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-info" >Update</button>
-            <button type="button" class="btn btn-success float-right" >Cancel</button>
+        <div class="card-footer col-sm-3">
+            <button type="submit" class="btn btn-info float-right" >Update</button>
+            <button type="cancel" class="btn btn-success " >Cancel</button>
         </div>
     </form>
+
 </div>
 @endsection

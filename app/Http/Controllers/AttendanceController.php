@@ -13,16 +13,23 @@ class AttendanceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function editAttend(){
-        $attends = Attendance::with('students')->get();
-        return view('content.edit_attend',compact('attends'));
+    public function editAttend(Attendance $attend, Students $student){
+//    $attend = Attendance::with('students')->get();
+        return view('content.edit_attend',compact('attend', 'student'));
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        if(isset($request->r))
+        {
+            $attendances = Attendance::where('reason','LIKE',"%$request->r%")->orWhere('status','LIKE',"%$request->r%")->get();
+        }else {
+            $attendances = Attendance::all();
+        }
+//        return view('content.attendance',compact('attendances'));
         $attends = Attendance::with('students')->get();
 //        dd($attends);
-        return view('content.attendance',compact('attends'));
+        return view('content.attendance',compact('attends','attendances'));
     }
     public function index1()
     {
@@ -67,7 +74,7 @@ class AttendanceController extends Controller
         \App\Attendance::insert($attents);
         return back()->with('success','successfully');
 //        dd($attent_students[0]->status);
-        return 'hello';
+//        return 'hello';
 //        $data = $request->validate([
 //            'date'=>'required',
 //            'student_id'=>'required',
@@ -118,23 +125,30 @@ class AttendanceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Attendance  $attendancce
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param Attendance $attend
+     * @return void
      */
-    public function update(Request $request, Attendance $attendancce)
+    public function update(Request $request,\App\Attendance $attend)
     {
-        //
+        $params = $request->all();
+//        dd($params);
+        $attend->update($params);
+        return redirect(url('/students/attendance'))->with('success','successfully');
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Attendance  $attendancce
+     * @param Attendance $attend
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy(Attendance $attendancce)
+    public function destroy(Attendance $attend)
     {
-        //
+        $attend->delete();
+        return redirect('/students/attendance')->with('success','successfully');
     }
 }

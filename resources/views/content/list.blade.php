@@ -2,25 +2,32 @@
 @section('title', 'list student')
 @section('list')
 
-
+    @if (session('success'))
+        <div class="alert alert-primary" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">
-                    <td>
-                        <a href="{{url('/students/create')}}" type="button" class="btn btn-block btn-outline-info btn-flat">New</a>
-                    </td>
+
+                    <a href="{{url('/students/create')}}" type="button" class="btn btn-info ">New</a>
+
                 </h3>
 
                 <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <form method="GET">
+                        <div class="input-group " style="padding-top: 4px;">
+                            <!-- Search form -->
+                            <input value="{{request('s')}}" name="s" class="form-control" type="text" placeholder="Search" aria-label="Search">
 
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <!-- /.card-header -->
@@ -38,24 +45,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @forelse($student as $students)
+                    @forelse($students as $student)
                     <tr>
-                        <td>{{$students->id}}</td>
-                        <td>{{$students->student_code}}</td>
-                        <td>{{$students->first_name}}</td>
-                        <td>{{$students->last_name}}</td>
-                        <td>{{$students->gender}}</td>
-                        <td><a href="#"> Delete</a> | <a href="#">Edit</a></td>
+                        <td>{{$student->id}}</td>
+                        <td>{{$student->student_code}}</td>
+                        <td>{{$student->first_name}}</td>
+                        <td>{{$student->last_name}}</td>
+                        <td>{{$student->gender}}</td>
+                        <td><a href="students/{{$student->id}}"> Delete</a> | <a href="students/{{$student->id}}/edit">Edit</a></td>
                     </tr>
                    @empty
-                        no record
+                        <td>no record</td>
                     @endforelse
                     </tbody>
                 </table>
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
     </div>
 </div>
 
