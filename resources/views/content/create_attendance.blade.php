@@ -1,6 +1,6 @@
 @extends('dashboard.master')
 @section('title', 'create attendance')
-@section('create_attendance')
+@section('content')
 
     @if (session('success'))
         <div class="alert alert-success ">
@@ -57,8 +57,8 @@
             </div>
              <div class="card-footer">
                  <button type="button" id="btn-add"  class="btn btn-info" value="add" onclick="AddData()">Add</button>
-                 <button type="submit" class="btn btn-success float-right" name="action" value="summit" formaction="{{url('attendance/store')}}">Summit</button>
-                 <button type="button" id="btn-add"  class="btn btn-secondary center-bloc" value="add" onclick="reset()" style="margin: 10px">Reset</button>
+                 <button type="submit" class="btn btn-success float-right" name="action" value="summit" >Summit</button>
+{{--                 <button type="button" id="btn-add"  class="btn btn-secondary center-bloc" value="add" onclick="reset()" style="margin: 10px">Reset</button>--}}
              </div>
     </form>
     </div>
@@ -77,7 +77,7 @@
             var status  = document.getElementById("status_select").value;
             var reason  = document.getElementById("reason").value;
             var student = $("#student_select option:selected" ).text();
-            if(save) {
+                if(save) {
                 var rows = "";
                 data.push({date: date, student_id: student_id, status: status, reason: reason});
                 // console.log(data);

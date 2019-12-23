@@ -16,7 +16,7 @@ class CreateSubjectsTable extends Migration
         Schema::create('subjects', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('code');
-            $table->string(' title');
+            $table->string('title');
             $table->double('cost');
             $table->text('description');
             $table->enum('action',['enable','disable']);

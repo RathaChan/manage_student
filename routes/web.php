@@ -41,4 +41,15 @@ Route::get('/students/{student}', 'StudentController@destroy');
 Route::get('/students/search', 'StudentController@scopeSearch');
 
 
+/* Subject*/
+Route::get('/subjects', 'SubjectController@index');
+Route::post('/subjects', 'SubjectController@store');
+Route::get('/subjects/create', 'SubjectController@create');
+
+/* Time Study*/
+Route::get('/time_study', 'TimeStudyController@index');
+Route::post('/time_study', 'TimeStudyController@store');
+Route::get('/time_study/create', 'TimeStudyController@create');
+
+
 

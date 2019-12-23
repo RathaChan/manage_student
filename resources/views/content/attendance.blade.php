@@ -1,7 +1,7 @@
 
 @extends('dashboard.master')
 @section('title', 'student attendance')
-@section('attendance')
+@section('content')
     @if (session('success'))
         <div class="alert alert-primary" role="alert">
             {{ session('success') }}

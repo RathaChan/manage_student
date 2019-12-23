@@ -1,6 +1,6 @@
 @extends('dashboard.master')
 @section('title', 'list student')
-@section('list')
+@section('content')
 
     @if (session('success'))
         <div class="alert alert-primary" role="alert">

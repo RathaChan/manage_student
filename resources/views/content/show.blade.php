@@ -1,4 +1,4 @@
 @extends('dashboard.master')
-@section('show')
+@section('content')
 
 @endsection

@@ -38,16 +38,9 @@
 @include('dashboard.sidebar')
     <div class="content-wrapper">
         <section class="content">
-            @yield('list')
-            @yield('create_student')
-            @yield('attendance')
-            @yield('create_attendance')
-            @yield('edit_attend')
-            @yield('edit_student')
-            @yield('delete_student')
+            @yield('content')
 
             <div class="container-fluid">
-                @yield('show')
             </div>
 
         </section>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Students;
+use App\Subject;
 use App\TimeStudy;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,7 @@ class TimeStudyController extends Controller
      */
     public function index()
     {
-        //
+        return view('timestudy.timestudy');
     }
 
     /**
@@ -24,7 +26,14 @@ class TimeStudyController extends Controller
      */
     public function create()
     {
-        //
+        $students = Students::all();
+        $subjects = Subject::all();
+//        dd($subjects);
+        return view('timestudy.create',[
+            'students'=> $students,
+            'subjects'=> $subjects
+
+        ]);
     }
 
     /**
