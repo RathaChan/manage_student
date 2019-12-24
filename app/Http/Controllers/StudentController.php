@@ -10,6 +10,12 @@ use Symfony\Component\Console\Input\Input;
 
 class StudentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            return $next($request);
+        });
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +23,7 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
+        session(['active_menu' => 'list_student']);
         if(isset($request->s))
         {
             $students = Students::where('first_name','LIKE',"%$request->s%")->orWhere('last_name','LIKE',"%$request->s%")
@@ -34,6 +41,7 @@ class StudentController extends Controller
      */
     public function create()
     {
+        session(['active_menu' => 'create_student']);
         return view('content.create');
     }
 

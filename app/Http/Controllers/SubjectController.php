@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class SubjectController extends Controller
 {
+
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +18,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
+        session(['active_menu' => 'list_subject']);
         $subjects = Subject::all();
         return view('subject.subject',compact('subjects'));
     }
@@ -64,9 +69,10 @@ class SubjectController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Subject $subject)
+    public function edit($id)
     {
-        //
+        $subject = Subject::all()->find($id);
+        return view('subject.edit',compact('subject'));
     }
 
     /**
@@ -78,7 +84,10 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
-        //
+        $data = $request->all();
+        $subject->update($data);
+//        dd($subject->update($data));
+        return redirect('/subjects')->with('success', 'successfully');
     }
 
     /**
@@ -89,6 +98,7 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        //
+        $subject->delete();
+        return redirect('/subjects')->with('success','successfully');
     }
 }

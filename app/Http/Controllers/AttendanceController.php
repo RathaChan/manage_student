@@ -20,6 +20,7 @@ class AttendanceController extends Controller
 
     public function index(Request $request)
     {
+        session(['active_menu' => 'list_attend']);
         if(isset($request->r))
         {
             $attendances = Attendance::where('reason','LIKE',"%$request->r%")->orWhere('status','LIKE',"%$request->r%")->get();
@@ -33,6 +34,7 @@ class AttendanceController extends Controller
     }
     public function index1()
     {
+        session(['active_menu' => 'create_attend']);
         $student = Students::all();
         return view('content.create_attendance',compact('student'));
     }

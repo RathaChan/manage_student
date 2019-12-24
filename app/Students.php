@@ -29,9 +29,9 @@ class Students extends Model
 //        return $this->belongsToMany('App\Room', 'student_rooms','student_id','room_id');
 //    }
 //
-//    public function subject(){
-//        return $this->belongsToMany('App\Subject', 'student_subject','student_id','subject_id');
-//    }
+    public function subject(){
+        return $this->belongsToMany('App\Subject', 'time_studys','student_id','subject_id');
+    }
 //
 //
 //

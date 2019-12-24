@@ -2,6 +2,11 @@
 @section('title', 'create student')
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-primary" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="card card-warning">
         <div class="card-header">
             <h3 class="card-title">Create subject</h3>

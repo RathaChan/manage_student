@@ -2,6 +2,11 @@
 @section('title', 'list student')
 @section('content')
 {{--@php(dd($subjects));--}}
+@if (session('success'))
+    <div class="alert alert-primary" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -43,7 +48,7 @@
                                     </select>
 
                                 </td>
-                                <td id="changetoupdate"><a href="#">Edit</a></td>
+                                <td id="changetoupdate"><a href="{{url('/subjects/'.$subject->id.'/edit')}}">Edit</a> | <a href="{{url('/subjects/'.$subject->id)}}">Delete</a></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -55,14 +60,3 @@
 
 @endsection
 
-@section('pagescript')
-    <script type="text/javascript">
-       function update() {
-
-           document.getElementById("changetoupdate").innerHTML('update');
-
-       }
-
-    </script>
-
-@endsection

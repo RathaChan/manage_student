@@ -44,7 +44,39 @@ class TimeStudyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $params = $request->all();
+//        dd(TimeStudy::create($params));
+//        return redirect()->back();
+//        dd($params);
+
+//        $timeStudys = json_decode($params['time_study']);
+//        dd(json_decode($params['time_study']));
+//        $times = [];
+//        foreach ($timeStudys as $time){
+//            $times[] = [
+//                'student_name'       =>  $time->student_id,
+//                'subject'     => $time->subject_id,
+//                'day'     => $time->day,
+//                'time_start' => $time->time_start,
+//                'time_end'     => $time->time_end,
+//                'description' => $time->description
+//            ];
+//        }
+//        dd($times);
+//        \App\TimeStudy::insert($times);
+//        return back()->with('success','successfully');
+
+//        $data = $request->validate([
+//            'student_name'=>'required',
+//            'subject'=>'required',
+//            'day'=>'required',
+//            'status'=>'required',
+//            'time_start'=>'required',
+//            'time_end'=>'required',
+//            'description'=>'required',
+//        ]);
+//        TimeStudy::create($data);
+//        return redirect()->back();
     }
 
     /**

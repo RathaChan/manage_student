@@ -1,6 +1,6 @@
 @extends('dashboard.master')
 @section('title', 'edit student')
-
+{{--@php(dd($student));--}}
 @section('content')
     <div class="card card-warning">
         <div class="card-header">

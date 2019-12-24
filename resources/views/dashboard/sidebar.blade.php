@@ -18,13 +18,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url('/students')}}" class="nav-link active">
+                            <a href="{{url('/students')}}" class="nav-link {{session('active_menu') == 'list_student' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{url('students/create')}}" class="nav-link">
+                            <a href="{{url('students/create')}}" class="nav-link {{session('active_menu') == 'create_student' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create</p>
                             </a>
@@ -41,13 +41,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url('/students/attendance')}}" class="nav-link">
+                            <a href="{{url('/students/attendance')}}" class="nav-link {{session('active_menu') == 'list_attend' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Attendance</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{url('/students/attendance/create')}}" class="nav-link">
+                            <a href="{{url('/students/attendance/create')}}" class="nav-link  {{session('active_menu') == 'create_attend' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create</p>
                             </a>
@@ -64,7 +64,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url('/subjects')}}" class="nav-link">
+                            <a href="{{url('/subjects')}}" class="nav-link  {{session('active_menu') == 'list_subject' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>subject</p>
                             </a>

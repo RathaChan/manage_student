@@ -7,16 +7,17 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form role="form" action="{{url('/time_study')}}" method="POST" enctype="multipart/form-data">
+            <form role="form" action="{{url('/time_study')}}" method="POST" enctype="multipart/form-data" id="form_summit">
                 {{ csrf_field() }}
+                <input type="hidden" name="time_study" value="">
                 <div class="row">
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                            <label for="">Student Name</label>
+                            <label for="">Student Name: </label>
                             <select name="student_name" id="" class="field-search">
                                 @foreach($students as $student)
-                                <option value="{{$student->id}}">{{$student->frist_name}}{{$student->last_name}}</option>
+                                <option value="{{$student->id}}">{{$student->first_name .' '. $student->last_name}}</option>
                                 @endforeach
                             </select>
                             @error('student_name')<p style="color: red">{{$message}}</p>@enderror
@@ -24,7 +25,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="">Subject</label>
+                            <label for="">Subject: </label>
                             <select name="subject" id="" class="field-search">
                                 @foreach($subjects as $subject)
 
@@ -36,7 +37,22 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="">Status</label>
+                            <label for="">Day: </label>
+                            <select name="day" id="" class="field-search">
+                                <option value="morning">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                                <option value="sunday">Sunday</option>
+                            </select>
+                            @error('day')<p style="color: red">{{$message}}</p>@enderror
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Status: </label>
                             <select name="status" id="" class="field-search">
                                 <option value="morning">Morning</option>
                                 <option value="afternoon">Afternoon</option>
@@ -45,6 +61,7 @@
                             @error('subject')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
@@ -62,14 +79,7 @@
                             @error('time_end')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="">Day</label>
-                            <input type="datetime-local" class="form-control" placeholder="day" autocomplete="off" name="day" value="{{old('day')}}">
-                            @error('day')<p style="color: red">{{$message}}</p>@enderror
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <div class="form-group">
                             <label for="">Description</label>
                             <textarea type="text" class="form-control" placeholder="description" autocomplete="off" name="description">
@@ -96,5 +106,17 @@
         </div>
         <!-- /.card-body -->
     </div>
+@endsection
+
+@section('pagescript')
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#form_summit').submit(function () {
+                $("input[name='time_study']").val(JSON.stringify(data));
+            });
+        });
+
+    </script>
 @endsection
 
