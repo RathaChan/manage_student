@@ -6,6 +6,7 @@ use App\Students;
 use App\Subject;
 use App\TimeStudy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TimeStudyController extends Controller
 {
@@ -16,6 +17,7 @@ class TimeStudyController extends Controller
      */
     public function index()
     {
+        session(['active_menu' => 'time_study']);
         return view('timestudy.timestudy');
     }
 
@@ -44,11 +46,25 @@ class TimeStudyController extends Controller
      */
     public function store(Request $request)
     {
+/*       Insert direct to database */
+//        DB::table('timestudys')->insert([
+//            'student_id'=>$request->student_name,
+//            'subject_id'=>$request->subject,
+//            'day'=>$request->day,
+//            'status'=>$request->status,
+//            'time_start'=>$request->time_start,
+//            'time_end'=>$request->time_end,
+//            'description'=>$request->description,
+//        ]);
+//        return redirect('/time_study');
+        /*       Insert direct to database */
         $params = $request->all();
+//        $stu_times = json_decode($params['student_time']);
 //        dd(TimeStudy::create($params));
-//        return redirect()->back();
-//        dd($params);
-
+//         TimeStudy::create($params);
+//         return redirect()->back();
+////        dd($params);
+//
 //        $timeStudys = json_decode($params['time_study']);
 //        dd(json_decode($params['time_study']));
 //        $times = [];
@@ -62,8 +78,8 @@ class TimeStudyController extends Controller
 //                'description' => $time->description
 //            ];
 //        }
-//        dd($times);
-//        \App\TimeStudy::insert($times);
+//      dd(\App\TimeStudy::insert($times));
+////        \App\TimeStudy::insert($times);
 //        return back()->with('success','successfully');
 
 //        $data = $request->validate([

@@ -10,12 +10,11 @@ class TimeStudy extends Model
     protected $fillable = [
         'student_id',
         'subject_id',
+        'day',
         'status',
         'time_start',
         'time_end',
         'description',
-        'day',
-
     ];
 
 //    public function student(){

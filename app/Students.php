@@ -21,9 +21,9 @@ class Students extends Model
     public function attendance(){
         return $this->hasMany('App\Attendance', 'student_id');
     }
-        public function subjects(){
-        return $this->belongsToMany(Subject::class);
-    }
+//        public function subjects(){
+//        return $this->belongsToMany(Subject::class);
+//    }
 //
 //    public function room(){
 //        return $this->belongsToMany('App\Room', 'student_rooms','student_id','room_id');

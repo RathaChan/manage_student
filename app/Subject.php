@@ -15,13 +15,13 @@ class Subject extends Model
         'action',
 
     ];
-        public function student(){
-        return $this->belongsToMany(Students::class);
-    }
+//        public function student(){
+//        return $this->belongsToMany(Students::class);
+//    }
 //    public function major(){
 //        return $this->belongsToMany('Major', 'major_subjects','subject_id','major_id');
 //    }
-    public function students(){
+    public function student(){
         return $this->belongsToMany('App\Student', 'time_studys','subject_id','student_id');
     }
 //    public function score(){

@@ -18,10 +18,10 @@ class CreateTimeStudysTable extends Migration
             $table->integer('student_id');
             $table->integer('subject_id');
             $table->enum('status',['morning','afternoon', 'evening']);
-            $table->text('day');
+            $table->string('day');
             $table->text('description');
-            $table->date('time_start');
-            $table->date('time_end');
+            $table->string('time_start');
+            $table->string('time_end');
 
             $table->timestamps();
         });

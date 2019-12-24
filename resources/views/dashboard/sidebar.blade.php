@@ -72,7 +72,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url('/time_study')}}" class="nav-link">
+                            <a href="{{url('/time_study')}}" class="nav-link {{session('active_menu') == 'time_study' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Time Study</p>
                             </a>
