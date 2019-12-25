@@ -7,19 +7,27 @@ use App\Subject;
 use App\TimeStudy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\VarDumper\Dumper\DataDumperInterface;
 
 class TimeStudyController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
+        $time_studys = TimeStudy::whereHas('students')->with(['students','subjects'])->get();
+//        dd($time_studys);
         session(['active_menu' => 'time_study']);
-        return view('timestudy.timestudy');
+        return view('timestudy.timestudy', [
+            'time_studys'=> $time_studys,
+        ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,8 +52,40 @@ class TimeStudyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    function hoursToMinutes2($hours_base)
+    {
+        $hours = 0;
+        $minutes = 0;
+
+        if (substr($hours_base, 0, 2) < 10) {
+            $hours_base = "0" . $hours_base;
+        }
+
+        $hours_sample = substr($hours_base, 0, 5);
+        if (strpos($hours_sample, ':') !== false) {
+            // Split hours and minutes.
+            list($hours, $minutes) = explode(':', $hours_sample);
+        }
+        $ampm = substr($hours_base, -2);
+        if ((strtoupper($ampm) == "PM") && $hours < 12) {
+            $hours += 12;
+        }
+
+        if (substr($hours_base, 0, 2) == "12" && substr($hours_base, -2) == "AM") {
+            $hours = 0;
+        }
+
+        return (int) $hours * 60 + (int) $minutes;
+    }
     public function store(Request $request)
     {
+        $params = $request->all();
+        $params['time_start'] = $this->hoursToMinutes2($params['time_start']);
+        $params['time_end'] = $this->hoursToMinutes2($params['time_end']);
+
+        \App\TimeStudy::create($params);
+        return redirect('/time_study')->with('success','successfully');
 /*       Insert direct to database */
 //        DB::table('timestudys')->insert([
 //            'student_id'=>$request->student_name,
@@ -58,7 +98,20 @@ class TimeStudyController extends Controller
 //        ]);
 //        return redirect('/time_study');
         /*       Insert direct to database */
-        $params = $request->all();
+        /*       Insert direct to database */
+
+
+//        \App\TimeStudy::create([
+//            'student_id' => $params['student_id'],
+//            'subject_id' => $params['subject_id'],
+//            'day' => $params['day'],
+//            'status' => $params['status'],
+//            'time_start' => $params['time_start'],
+//            'time_end' => $params['time_end'],
+//            'description' => $params['description'],
+//        ]);
+
+
 //        $stu_times = json_decode($params['student_time']);
 //        dd(TimeStudy::create($params));
 //         TimeStudy::create($params);
@@ -112,9 +165,13 @@ class TimeStudyController extends Controller
      * @param  \App\TimeStudy  $timeStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit(TimeStudy $timeStudy)
+    public function edit()
     {
-        //
+        $time_studys = TimeStudy::whereHas('students')->with(['students','subjects'])->get();
+//        dd($time_studys[0]['time_end']);
+        $time_studys[0]['time_start'] = date("H:i", strtotime($time_studys[0]['time_start']));
+        $time_studys[0]['time_end'] = date("H:i", strtotime($time_studys[0]['time_end']));
+        return view('timestudy.edit', compact( 'time_studys'));
     }
 
     /**
@@ -126,7 +183,12 @@ class TimeStudyController extends Controller
      */
     public function update(Request $request, TimeStudy $timeStudy)
     {
-        //
+        $params = $request->all();
+        $params['time_start'] = $this->hoursToMinutes2($params['time_start']);
+        $params['time_end'] = $this->hoursToMinutes2($params['time_end']);
+
+        $timeStudy->update($params);
+        return redirect('/time_study')->with('success','successfully');
     }
 
     /**
@@ -137,6 +199,7 @@ class TimeStudyController extends Controller
      */
     public function destroy(TimeStudy $timeStudy)
     {
-        //
+        $timeStudy->delete();
+        return redirect('/time_study')->with('success','successfully');
     }
 }

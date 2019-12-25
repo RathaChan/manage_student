@@ -44,7 +44,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Description</label>
-                            <textarea type="text" class="form-control"  placeholder="description..." autocomplete="off" name="description" value="{{old('description')}}">
+                            <textarea type="text" class="form-control"  rows="3" placeholder="...................." autocomplete="off" name="description" value="{{old('description')}}">
                             </textarea>
                             @error('description')<p style="color: red">{{$message}}</p>@enderror
                         </div>

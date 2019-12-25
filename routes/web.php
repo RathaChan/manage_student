@@ -53,6 +53,11 @@ Route::get('/subjects/{subject}', 'SubjectController@destroy');
 Route::get('/time_study', 'TimeStudyController@index');
 Route::post('/time_study', 'TimeStudyController@store');
 Route::get('/time_study/create', 'TimeStudyController@create');
+Route::get('/time_study/{id}/edit', 'TimeStudyController@edit');
+Route::put('/time_study/{timeStudy}', 'TimeStudyController@update');
+Route::get('/time_study/{timeStudy}', 'TimeStudyController@destroy');
 
-
+Route::get('/ui', function () {
+    return view('timestudy.ui_time_study');
+});
 

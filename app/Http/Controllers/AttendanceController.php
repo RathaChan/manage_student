@@ -62,8 +62,9 @@ class AttendanceController extends Controller
     public function store(Request $request)
     {
         $params = $request->all();
-
+//        dd($params);
         $attent_students = json_decode($params['attendent_student']);
+
         $attents = [];
         foreach ($attent_students as $attent_student){
             $attents[] = [

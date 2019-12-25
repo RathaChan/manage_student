@@ -17,11 +17,11 @@ class CreateTimeStudysTable extends Migration
             $table->bigIncrements('id');
             $table->integer('student_id');
             $table->integer('subject_id');
-            $table->enum('status',['morning','afternoon', 'evening']);
+            $table->enum('status',['Morning','Afternoon', 'Evening']);
             $table->string('day');
             $table->text('description');
-            $table->string('time_start');
-            $table->string('time_end');
+            $table->integer('time_start');
+            $table->integer('time_end');
 
             $table->timestamps();
         });

@@ -14,10 +14,11 @@ class Students extends Model
         'last_name',
         'gender'
     ];
-//    public function timeStudy(){
-//        return $this->belongsTo('App\TimeStudy', 'time_study_id');
-//
-//}
+
+    public function timeStudies(){
+        return $this->hasMany('App\TimeStudy', 'student_id');
+    }
+
     public function attendance(){
         return $this->hasMany('App\Attendance', 'student_id');
     }
@@ -30,7 +31,7 @@ class Students extends Model
 //    }
 //
     public function subject(){
-        return $this->belongsToMany('App\Subject', 'time_studys','student_id','subject_id');
+        return $this->belongsToMany('App\Subject', 'timestudys','student_id','subject_id')->withPivot("time_start", "time_end", "day", "status" , "description" );;
     }
 //
 //
