@@ -36,14 +36,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 ">
-                    <div class="form-group">
-                        <label for="">Score: </label>
-                        <input type="text" name="attendance" id="attendance" class="form-control col-sm-5 " placeholder="attendance" autocomplete="off">
-                        <input type="text" name="homework" id="homework" class="form-control col-sm-5" placeholder="homework" autocomplete="off">
-                        <input type="text" name="midterm" id="midterm" class="form-control col-sm-5" placeholder="midterm" autocomplete="off">
-                        <input type="text" name="assignment"  id="assignment" class="form-control col-sm-5" placeholder="assignment" autocomplete="off">
-                        <input type="text" name="final_score" id="final_score" class="form-control col-sm-5" placeholder="final" autocomplete="off">
+                <div class="col-sm-10 col-sm offset-2 ">
+                    <label for="" >Scores:</label> <hr>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Attendance:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="attendance" id="attendance" class="form-control " placeholder="attendance" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Homework:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="homework" id="homework" class="form-control " placeholder="homework" autocomplete="off">                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Midterm:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="midterm" id="midterm" class="form-control " placeholder="midterm" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Assignment:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="assignment"  id="assignment" class="form-control " placeholder="assignment" autocomplete="off">
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Final:</label>
+                        <div class="col-sm-5">
+
+                            <input type="text" name="final_score" id="final_score" class="form-control " placeholder="final" autocomplete="off">                        </div>
                     </div>
                 </div>
             </div>
