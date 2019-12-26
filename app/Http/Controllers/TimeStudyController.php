@@ -165,13 +165,19 @@ class TimeStudyController extends Controller
      * @param  \App\TimeStudy  $timeStudy
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit( TimeStudy $time_study)
     {
+//        dd($time_study);
+//        $time_study = DB::table('timestudys')->find($time_study);
         $time_studys = TimeStudy::whereHas('students')->with(['students','subjects'])->get();
-//        dd($time_studys[0]['time_end']);
-        $time_studys[0]['time_start'] = date("H:i", strtotime($time_studys[0]['time_start']));
-        $time_studys[0]['time_end'] = date("H:i", strtotime($time_studys[0]['time_end']));
-        return view('timestudy.edit', compact( 'time_studys'));
+//        dd($time_study->time_start);
+        $time_study->time_start = date("H:i", strtotime($time_study->time_start));
+        $time_study->time_end   = date("H:i", strtotime($time_study->time_end));
+
+        return view('timestudy.edit',[
+            'time_study' => $time_study,
+            'time_studys'=> $time_studys
+        ] );
     }
 
     /**

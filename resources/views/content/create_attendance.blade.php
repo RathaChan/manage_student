@@ -11,7 +11,7 @@
     <div class="card card-info">
         <div class="card-header">
             <h3 class="card-title">Create Attendance Student</h3>
-            <a  href="{{url('/students/attendance')}}" type="button" id="btn-add"  class="btn btn-warning float-right">Attendance</a>
+            <a  href="{{url('/students/attendance')}}" type="button" id=""  class="btn btn-warning float-right">Attendance</a>
 
         </div>
         <!-- /.card-header -->
@@ -23,15 +23,15 @@
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Date:</label>
                     <div class="col-sm-10">
-                        <input type="date" name="date" class="" placeholder="date" id="date" value="">
+                        <input type="date" name="date" class="form-control col-sm-5" placeholder="date" id="date" value="">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Student Name:</label>
                     <div class="col-sm-10">
-                        <select name="student_select" id="student_select" class="field-search" title="all students">
+                        <select name="student_select" id="student_select"  class="form-control col-sm-5" title="all students">
                             @foreach($student as $students)
-                                <option value="{{$students->id}}">{{$students->first_name}} {{$students->last_name}}</option>
+                                <option class="form-control" value="{{$students->id}}">{{$students->first_name}} {{$students->last_name}}</option>
 {{--                                                        <option value="">World</option>--}}
                             @endforeach
                         </select>
@@ -40,7 +40,7 @@
                 <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Status:</label>
                     <div class="col-sm-10">
-                        <select name="status_select" id="status_select" class="field-search">
+                        <select name="status_select" id="status_select" class="form-control col-sm-5">
                             <option value="absent">Absent</option>
                             <option value="permission">Permission</option>
                         </select>
@@ -117,7 +117,7 @@
                 get_student_id_for_update = $(this).data('id')
                 var $row = $(this).closest("tr");
                 $row.find('td').each (function(idx) {
-                    // console.log($(this).text());
+                     console.log($(this).text());
                     switch(idx){
                         case 0 :
                             var date = $(this).text();

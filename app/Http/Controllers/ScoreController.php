@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Score;
+use App\Students;
+use App\Subject;
 use Illuminate\Http\Request;
 
 class ScoreController extends Controller
@@ -14,7 +16,9 @@ class ScoreController extends Controller
      */
     public function index()
     {
-        //
+        $scores =Score::whereHas('student')->with(['student','subject'])->get();;
+        session(['active_menu' => 'score']);
+        return  view('score.index', compact('scores'));
     }
 
     /**
@@ -24,7 +28,12 @@ class ScoreController extends Controller
      */
     public function create()
     {
-        //
+        $subjects = Subject::all();
+        $students = Students::all();
+        return view('score.create',[
+            'subjects'=>$subjects,
+            'students'=>$students,
+        ]);
     }
 
     /**
@@ -35,7 +44,24 @@ class ScoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $params = $request->all();
+        $score_students = json_decode($params['score_student']);
+//        dd($score_students);
+        $scores = [];
+        foreach ($score_students as $score_student){
+            $scores[] = [
+               "homework"    => $score_student->homework,
+               "mid_term"    => $score_student->midterm,
+               "assignment"  => $score_student->assignment,
+               "final"       => $score_student->final_score,
+               "student_id"  => $score_student->student_id,
+               "subject_id"  => $score_student->subject_id,
+                "attendance" => $score_student->attendance,
+            ];
+        }
+//        dd($scores);
+        \App\Score::insert($scores);
+        return back()->with('success','successfully');
     }
 
     /**

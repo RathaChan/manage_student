@@ -21,7 +21,7 @@
                         <!-- text input -->
                         <div class="form-group">
                             <label for="">Student Name: </label>
-                            <select name="student_id" id="student_name" class="field-search">
+                            <select name="student_id" id="student_name" class="form-control">
                                 @foreach($students as $student)
                                 <option value="{{$student->id}}">{{$student->first_name .' '. $student->last_name}}</option>
                                 @endforeach
@@ -32,7 +32,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Subject: </label>
-                            <select name="subject_id" id="subject" class="field-search">
+                            <select name="subject_id" id="subject" class="form-control">
                                 @foreach($subjects as $subject)
 
                                     <option value="{{$subject->id}}">{{$subject->title}}</option>
@@ -44,7 +44,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Day: </label>
-                            <select name="day" id="day" class="field-search">
+                            <select name="day" id="day" class="form-control">
                                 <option value="monday">Monday</option>
                                 <option value="tuesday">Tuesday</option>
                                 <option value="wednesday">Wednesday</option>
@@ -59,7 +59,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Status: </label>
-                            <select name="status" id="status" class="field-search">
+                            <select name="status" id="status" class="form-control">
                                 <option  value="morning">Morning</option>
                                 <option value="afternoon">Afternoon</option>
                                 <option value="evening">Evening</option>
@@ -73,21 +73,21 @@
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                            <label for="">Time Start</label>
+                            <label for="">Time Start:</label>
                             <input type="time" class="form-control" placeholder="time start" autocomplete="off" name="time_start" value="{{old('time_start')}}" id="time_start">
                             @error('time_start')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="">Time End</label>
+                            <label for="">Time End:</label>
                             <input type="time" class="form-control" placeholder="time end" autocomplete="off" name="time_end" value="{{old('time_end')}}" id="time_end">
                             @error('time_end')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="">Description</label>
+                            <label for="">Description:</label>
                             <textarea class="form-control" autocomplete="off" name="description"  id="description" rows="3" placeholder="............"></textarea>
                             @error('description')<p style="color: red">{{$message}}</p>@enderror
                         </div>

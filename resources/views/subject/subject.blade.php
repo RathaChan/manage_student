@@ -48,7 +48,7 @@
                                     </select>
 
                                 </td>
-                                <td id="changetoupdate"><a href="{{url('/subjects/'.$subject->id.'/edit')}}">Edit</a> | <a href="{{url('/subjects/'.$subject->id)}}">Delete</a></td>
+                                <td id="changetoupdate"><a href="{{url('/subjects/'.$subject->id.'/edit')}}">Edit</a></td>
                             </tr>
                             @endforeach
                         </tbody>

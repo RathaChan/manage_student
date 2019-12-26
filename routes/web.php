@@ -53,11 +53,32 @@ Route::get('/subjects/{subject}', 'SubjectController@destroy');
 Route::get('/time_study', 'TimeStudyController@index');
 Route::post('/time_study', 'TimeStudyController@store');
 Route::get('/time_study/create', 'TimeStudyController@create');
-Route::get('/time_study/{id}/edit', 'TimeStudyController@edit');
+Route::get('/time_study/{time_study}/edit', 'TimeStudyController@edit');
 Route::put('/time_study/{timeStudy}', 'TimeStudyController@update');
 Route::get('/time_study/{timeStudy}', 'TimeStudyController@destroy');
 
 Route::get('/ui', function () {
     return view('timestudy.ui_time_study');
 });
+//login
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Score
+
+Route::resource('scores', 'ScoreController');
 

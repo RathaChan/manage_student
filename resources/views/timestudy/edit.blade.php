@@ -11,7 +11,7 @@
         <div class="card-header">
             <h3 class="card-title"> edit time_study</h3>
         </div>
-        @foreach($time_studys as $time_study)
+
             <div class="card-body">
                 <form role="form" action="{{url('/time_study/'.''.$time_study->id)}}" method="POST" enctype="multipart/form-data" id="form_summit">
                     {{ csrf_field() }}
@@ -22,9 +22,9 @@
                             <!-- text input -->
                             <div class="form-group">
                                 <label for="">Student Name: </label>
-                                <select name="student_id" id="student_name" class="field-search">
-
-                                    <option class="col-sm-9" value="{{$time_study->students->id}}">{{$time_study->students->first_name .' '.$time_study->students->last_name}}</option>
+                                <select name="student_id" id="student_name" class="form-control">
+                                    @foreach($time_studys as $stu_time)
+                                    <option class="col-sm-9" value="{{$stu_time->students->id}}">{{$stu_time->students->first_name .' '. $stu_time->students->last_name  }}</option>
                                     @endforeach
                                 </select>
                                 @error('student_name')<p style="color: red">{{$message}}</p>@enderror
@@ -33,16 +33,17 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="">Subject: </label>
-                                <select name="subject_id" id="subject" class="field-search">
-
-                                    <option value="{{$time_study->subjects->id}}">{{$time_study->subjects->title}}</option>
+                                <select name="subject_id" id="subject" class="form-control">
+                                    @foreach($time_studys as $sub)
+                                    <option value="{{$sub->subjects->id}}">{{$sub->subjects->title}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="">Day: </label>
-                                <select name="day" id="day" class="field-search">
+                                <select name="day" id="day" class="form-control">
                                     @foreach([
                                         "Monday",
                                         "Tuesday",
@@ -63,7 +64,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="">Status: </label>
-                                <select name="status" id="status" class="field-search">
+                                <select name="status" id="status" class="form-control">
                                     @foreach(["Morning", "Afternoon","Evening"] as $status)
                                         <option {{$time_study->status == $status ? 'selected' : '' }}>{{$status}}</option>
                                     @endforeach

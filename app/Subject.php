@@ -20,6 +20,10 @@ class Subject extends Model
     {
         return $this->hasMany('App\TimeStudy','subject_id');
     }
+    public function score()
+    {
+        return $this->hasMany('App\Score','subject_id');
+    }
 //        public function student(){
 //        return $this->belongsToMany(Students::class);
 //    }

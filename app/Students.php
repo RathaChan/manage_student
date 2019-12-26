@@ -22,6 +22,9 @@ class Students extends Model
     public function attendance(){
         return $this->hasMany('App\Attendance', 'student_id');
     }
+    public function score(){
+        return $this->hasMany('App\Score', 'student_id');
+    }
 //        public function subjects(){
 //        return $this->belongsToMany(Subject::class);
 //    }

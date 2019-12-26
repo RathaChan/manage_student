@@ -79,6 +79,23 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item has-treeview menu-open">
+                    <a href="dashboard/" class="nav-link active">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Score
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{url('/scores')}}" class="nav-link {{session('active_menu') == 'score' ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Scores</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

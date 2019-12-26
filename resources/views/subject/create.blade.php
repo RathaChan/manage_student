@@ -52,7 +52,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Status: </label>
-                            <select name="action" id="" class="field-search">
+                            <select name="action" id="" class="form-control col-sm-6">
                                 <option value="enable">Enable</option>
                                 <option value="disable">Disable</option>
 
