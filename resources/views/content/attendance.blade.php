@@ -43,8 +43,10 @@
                         <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Image</th>
                             <th>date</th>
                             <th>Name</th>
+                            <th>Gender</th>
                             <th>Reason</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -54,8 +56,10 @@
                         @forelse($attends as $attend)
                         <tr>
                             <td>{{$attend->id}}</td>
+                            <td><img src="{{asset('/images/' . $attend->students->image)}}" width="60" height="60" /></td>
                             <td>{{$attend->date}}</td>
                             <td> @if(!empty($attend->students)){{$attend->students->first_name}} {{$attend->students->last_name}}@endif</td>
+                            <td>{{$attend->students->gender}}</td>
                             <td>{{$attend->reason}}</td>
                             <td>{{$attend->status}}</td>
                             <td><a href="/attendance/{{$attend->id}}/edit">Edit</a> | <a href="/attendance/{{$attend->id}}">Delete</a></td>

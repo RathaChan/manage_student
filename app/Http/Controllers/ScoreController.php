@@ -16,7 +16,8 @@ class ScoreController extends Controller
      */
     public function index()
     {
-        $scores =Score::whereHas('student')->with(['student','subject'])->get();;
+        $scores =Score::whereHas('student')->with(['student','subject'])->get();
+
         session(['active_menu' => 'score']);
         return  view('score.index', compact('scores'));
     }
@@ -30,6 +31,7 @@ class ScoreController extends Controller
     {
         $subjects = Subject::all();
         $students = Students::all();
+
         return view('score.create',[
             'subjects'=>$subjects,
             'students'=>$students,

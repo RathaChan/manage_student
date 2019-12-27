@@ -28,7 +28,8 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- custom yourself -->
-
+{{--    <link rel="stylesheet" href="{{asset('/template/css/style.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('/template/css/main-color.css')}}" id="colors">--}}
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 
 </head>
@@ -89,6 +90,20 @@
 <script src="{{asset('/dashboard/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('/dashboard/dist/js/demo.js')}}"></script>
+
+<!-- Scripts from lafourchette
+================================================== -->
+{{--<script type="text/javascript" src="{{asset('/template/scripts/jquery-2.2.0.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/mmenu.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/chosen.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/slick.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/rangeslider.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/magnific-popup.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/waypoints.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/counterup.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/jquery-ui.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/tooltips.min.js')}}"></script>--}}
+{{--<script type="text/javascript" src="{{asset('/template/scripts/custom.js')}}"></script>--}}
 @yield('pagescript')
 </body>
 </html>

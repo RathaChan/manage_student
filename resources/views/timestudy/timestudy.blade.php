@@ -1,6 +1,7 @@
 @extends('dashboard.master')
 @section('title', 'list timestudy')
 @section('content')
+{{--    @php(dd($time_studys));--}}
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -16,6 +17,7 @@
                     <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Image</th>
                         <th>Student Name</th>
                         <th>Subject</th>
                         <th>Time Start</th>
@@ -34,6 +36,7 @@
 
 
                         <td>{{$time_study->id}}</td>
+                        <td><img src="{{asset('/images/' . $time_study->students->image)}}" width="60" height="60" /></td>
                         <td>{{$time_study->students->first_name .' '.$time_study->students->last_name }}</td>
                         <td>{{$time_study->subjects->title}}</td>
                         <td>{{$time_study->time_start}}</td>

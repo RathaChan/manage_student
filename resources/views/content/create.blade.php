@@ -8,8 +8,19 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form role="form" action="{{url('students')}}" method="POST" enctype="multipart/form-data">
+            <form role="form" action="{{url('students')}}" method="POST" enctype="multipart/form-data" class="md-form">
                 {{ csrf_field() }}
+                <div class="row">
+                    <div class="edit-profile-photo">
+                        <img id="image-upload" src="/images/1298461.png" alt="">
+                        <div class="change-photo-btn">
+                            <div class="photoUpload">
+                                <span><i class="fa fa-upload"></i> Upload Photo</span>
+                                <input type="file" id="image" class="upload img-responsive" name="image" style="border: 1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-sm-6">
                         <!-- text input -->
@@ -19,15 +30,7 @@
                             @error('student_code')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="">Image:</label>
-                            <input type="text" class="form-control" placeholder="image" autocomplete="off" name="image" value="{{old('image')}}">
-                            @error('image')<p style="color: red">{{$message}}</p>@enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
+
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
@@ -36,6 +39,9 @@
                             @error('first_name')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
+
+                </div>
+                <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Last Name:</label>
@@ -43,18 +49,18 @@
                             @error('last_name')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <!-- text input -->
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Gender:</label>
-                            <input type="text" class="form-control" placeholder="Gender" autocomplete="off" name="gender" value="{{old('gender')}}">
+                            <select name="gender" id=""  class="form-control" >
+                                <option value="Male" class="form-control">Male</option>
+                                <option value="Female" class="form-control">Female</option>
+
+                            </select>
                             @error('gender')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
                 </div>
-
                 <div class="form-actions right">
                     <button class="btn btn-warning mr-1">
                         <i class="ft-x"></i> Cancel
@@ -72,4 +78,25 @@
         </div>
         <!-- /.card-body -->
     </div>
+@endsection
+
+@section('pagescript')
+    <script>
+        $(document).ready(function () {
+            $('#image').change(function () {
+                //check if browser support all upload file feature
+                if (!window.File && !window.FileReader && !window.FileList && !window.Blob)
+                    alert('The File APIs are not fully supported in this browser.');
+
+                if ($(this).get(0).files.length === 1) {
+                    $('#removed_img').val(0);
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#image-upload').attr('src',e.target.result)
+                    };
+                    reader.readAsDataURL($(this).get(0).files[0]);
+                }
+            });
+        });
+    </script>
 @endsection

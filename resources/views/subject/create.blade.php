@@ -19,14 +19,14 @@
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                            <label for="">Code</label>
+                            <label for="">Code:</label>
                             <input type="text" class="form-control" placeholder="code" autocomplete="off" name="code" value="{{old('code')}}">
                             @error('code')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="">Subject</label>
+                            <label for="">Subject:</label>
                             <input type="text" class="form-control" placeholder="subject" autocomplete="off" name="title" value="{{old('title')}}">
                             @error('title')<p style="color: red">{{$message}}</p>@enderror
                         </div>
@@ -36,14 +36,14 @@
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                            <label for="">Cost</label>
+                            <label for="">Cost:</label>
                             <input type="text" class="form-control" placeholder="cost" autocomplete="off" name="cost" value="{{old('cost')}}">
                             @error('cost')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="">Description</label>
+                            <label for="">Description:</label>
                             <textarea type="text" class="form-control"  rows="3" placeholder="...................." autocomplete="off" name="description" value="{{old('description')}}">
                             </textarea>
                             @error('description')<p style="color: red">{{$message}}</p>@enderror

@@ -2,33 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d03a24f0-d614-49a7-93ca-11d1268bd7b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/manage_student.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/manage_student.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/beige.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/brown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/celadon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/cherry.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/cyan.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/gray.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/green.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/navy.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/olive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/orange.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/peach.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/purple.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/red.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/colors/yellow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/invoice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/main-color.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/plugins/revolutionslider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontello.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontello.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/fontello.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/iconsmind.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/iconsmind.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/iconsmind.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/iconsmind.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/simple-line-icons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/simple-line-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/simple-line-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/fonts/simple-line-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/chosen.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/counterup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/daterangepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/dropzone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.actions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.kenburn.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.layeranimation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.migration.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.navigation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.parallax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.slideanims.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.video.min copy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/extensions/revolution.extension.video.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/infobox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/isotope.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/jpanelmenu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/jquery-2.2.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/jquery.countdown.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/maps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/markerclusterer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/mmenu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/quantityButtons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/rangeslider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/slick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/sticky-kit.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/switcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/themepunch.revolution.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/themepunch.tools.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/tooltips.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/typed.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/template/scripts/waypoints.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ScoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TimeStudyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TimeStudyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Score.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Score.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Students.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Students.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_18_023004_create_scores_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_18_023004_create_scores_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dashboard/pages/forms/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/dashboard/pages/forms/general.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dashboard/pages/tables/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/dashboard/pages/tables/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dashboard/pages/tables/jsgrid.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/dashboard/pages/tables/jsgrid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/create_attendance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/create_attendance.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/attendance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/attendance.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/edit_student.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/edit_student.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/score/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/score/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/subject/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subject/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subject/subject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subject/subject.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/timestudy/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/timestudy/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/timestudy/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/timestudy/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/timestudy/ui_time_study.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/timestudy/timestudy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/timestudy/timestudy.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,9 +208,10 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -156,6 +221,15 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git_laravel\manage_student\manage_student\resources\views\timestudy" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git_laravel\manage_student\manage_student\public\images" />
+      <recent name="D:\git_laravel\manage_student\manage_student\public\template" />
+    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="advanced.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/manage_student/public/dashboard/pages/forms/advanced.html" useBuiltInWebServerPort="true">
@@ -204,7 +278,8 @@
       <workItem from="1577162967861" duration="12161000" />
       <workItem from="1577236073485" duration="20464000" />
       <workItem from="1577262559475" duration="5721000" />
-      <workItem from="1577323270323" duration="27196000" />
+      <workItem from="1577323270323" duration="27309000" />
+      <workItem from="1577409651971" duration="27216000" />
     </task>
     <servers />
   </component>
@@ -216,25 +291,37 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#ESLint/0.0.1280.680@0.0.1280.680" timestamp="1577342439676" />
+    <state x="390" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577416187115">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="390" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1577416187115" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1577323324350">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1577323324350" />
-    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1577345991549">
+    <state x="383" y="155" key="NewPhpClassDialog" timestamp="1577436690705">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1577345991549" />
+    <state x="383" y="155" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1577436690705" />
+    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1577438380094">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1577438380094" />
     <state width="534" height="446" key="SwitcherDM" timestamp="1577174437174">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1577174437174" />
+    <state x="269" y="42" width="742" height="596" key="find.popup" timestamp="1577430727328">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="269" y="42" width="742" height="596" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1577430727328" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1577348545302">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1577348545302" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1577349756517">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1577435408332">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1577349756517" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1577435408332" />
   </component>
 </project>

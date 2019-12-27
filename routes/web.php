@@ -36,7 +36,7 @@ Route::get('/attendance/{attend}', 'AttendanceController@destroy');
 
 //Route::resource('attendances', 'AttendanceController');
 Route::resource('students', 'StudentController');
-//Route::get('/students/{student}/edit', 'StudentController@edit');
+Route::get('/students/{student}/edit', 'StudentController@edit');
 Route::get('/students/{student}', 'StudentController@destroy');
 Route::get('/students/search', 'StudentController@scopeSearch');
 

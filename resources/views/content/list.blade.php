@@ -36,6 +36,7 @@
                     <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Image</th>
                         <th>Code</th>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -48,6 +49,7 @@
                     @forelse($students as $student)
                     <tr>
                         <td>{{$student->id}}</td>
+                        <td><img src="{{asset('/images/' . $student->image)}}" width="60" height="60" /></td>
                         <td>{{$student->student_code}}</td>
                         <td>{{$student->first_name}}</td>
                         <td>{{$student->last_name}}</td>

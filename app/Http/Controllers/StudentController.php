@@ -55,15 +55,18 @@ class StudentController extends Controller
     {
         $data = $request->validate([
             'student_code'=>'required',
-            'image'=>'required',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'first_name'=>'required',
             'last_name'=>'required',
             'gender'=>'required',
         ]);
+        $data['image'] = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $data['image'] );
+
 //        DB::table('students')->insert($data);
 //        dd($data);
          Students::create($data);
-        return redirect('students/create');
+        return redirect('students/create')->with('success', 'successfully');
     }
 
     /**
@@ -85,6 +88,7 @@ class StudentController extends Controller
      */
     public function edit(Students $student)
     {
+
         return view('content.edit_student',compact('student'));
 
     }
@@ -98,9 +102,11 @@ class StudentController extends Controller
      */
     public function update(Request $request, Students $student)
     {
-        $params = $request->all();
-//        dd($params);
-        $student->update($params);
+        $data = $request->all();
+        $data['image'] = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $data['image'] );
+//        dd($data['image']);
+        $student->update($data);
         return redirect('/students')->with('success','successfully');
 
     }
