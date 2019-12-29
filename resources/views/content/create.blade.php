@@ -62,9 +62,10 @@
                     </div>
                 </div>
                 <div class="form-actions right">
-                    <button class="btn btn-warning mr-1">
+                    <a href="{{url('/students')}}"><button class="btn btn-warning mr-1" type="button">
                         <i class="ft-x"></i> Cancel
                     </button>
+                    </a>
                     <button type="submit" class="btn btn-primary">
                         <i class="la la-check-square-o"></i> Save
                     </button>

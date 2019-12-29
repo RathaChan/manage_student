@@ -81,4 +81,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Score
 
 Route::resource('scores', 'ScoreController');
+Route::get('/scores/{score}', 'ScoreController@destroy');
 

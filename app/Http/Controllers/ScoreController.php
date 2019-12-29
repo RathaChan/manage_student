@@ -85,7 +85,14 @@ class ScoreController extends Controller
      */
     public function edit(Score $score)
     {
-        //
+        $subjects = Subject::all();
+        $students = Students::all();
+
+        return view('score.edit',[
+            'subjects'  => $subjects,
+            'students'  => $students,
+            'score'     => $score
+        ]);
     }
 
     /**
@@ -97,7 +104,26 @@ class ScoreController extends Controller
      */
     public function update(Request $request, Score $score)
     {
-        //
+        $params = $request->all();
+//        dd($params);
+//        $score_students = json_decode($params['score_student']);
+////        dd($score_students);
+//        $scores = [];
+//        foreach ($score_students as $score_student){
+//            $scores[] = [
+//                "homework"    => $score_student->homework,
+//                "mid_term"    => $score_student->midterm,
+//                "assignment"  => $score_student->assignment,
+//                "final"       => $score_student->final_score,
+//                "student_id"  => $score_student->student_id,
+//                "subject_id"  => $score_student->subject_id,
+//                "attendance" => $score_student->attendance,
+//            ];
+//        }
+//        dd($scores);
+        $score->update($params);
+//        dd($score);
+        return redirect(url('/scores'))->with('success','successfully');
     }
 
     /**
@@ -108,6 +134,7 @@ class ScoreController extends Controller
      */
     public function destroy(Score $score)
     {
-        //
+        $score->detele();
+        return redirect(url('/scores'))->with('success', ' successfully');
     }
 }

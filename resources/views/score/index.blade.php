@@ -41,7 +41,7 @@
                     <td>{{$score->mid_term}}</td>
                     <td>{{$score->assignment}}</td>
                     <td>{{$score->final}}</td>
-                    <td><a href="#"> Edit</a> | <a href="#">Delete</a></td>
+                    <td><a href="{{url('/scores/'.' '. $score->id .''. '/edit')}}"> Edit</a></td>
                     @empty
                         <td>No record</td>
                 </tr>
