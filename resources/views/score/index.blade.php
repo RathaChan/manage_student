@@ -33,7 +33,7 @@
                 <tr>
                     <td>{{$score->id}}</td>
                     <td><img src="{{asset('/images/' . $score->student->image)}}" width="60" height="60" /></td>
-                    <td>{{$score->student->first_name .''.$score->student->last_name }}</td>
+                    <td>{{$score->student->first_name .' '.$score->student->last_name }}</td>
                     <td>{{$score->student->gender}}</td>
                     <td>{{$score->subject->title}}</td>
                     <td>{{$score->attendance}}</td>

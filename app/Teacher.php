@@ -8,7 +8,7 @@ class Teacher extends Model
 {
     protected $table = 'teachers';
     protected $fillable = [
-        ' code',
+        'code',
         'image',
         'first_name',
         'last_name',
@@ -16,7 +16,7 @@ class Teacher extends Model
         'dob',
         'address',
         'email',
-        ' education',
+        'education',
         'salary',
         'action',
     ];

@@ -47,6 +47,7 @@ class ScoreController extends Controller
     public function store(Request $request)
     {
         $params = $request->all();
+//        dd($params);
         $score_students = json_decode($params['score_student']);
 //        dd($score_students);
         $scores = [];

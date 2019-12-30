@@ -60,11 +60,11 @@
                         <div class="form-group">
                             <label for="">Status: </label>
                             <select name="status" id="status" class="form-control">
-                                <option  value="morning">Morning</option>
-                                <option value="afternoon">Afternoon</option>
-                                <option value="evening">Evening</option>
+                                <option  value ="morning">Morning</option>
+                                <option  value ="afternoon">Afternoon</option>
+                                <option  value ="evening">Evening</option>
                             </select>
-                            @error('subject')<p style="color: red">{{$message}}</p>@enderror
+                            @error('status')<p style="color: red">{{$message}}</p>@enderror
                         </div>
                     </div>
 
@@ -96,18 +96,13 @@
 
 
                 <div class="form-actions right">
-                    <button class="btn btn-info" type="button" id="btn-add" onclick="addData(), reset();">
+                    <button class="btn btn-info" type="button" id="btn-add" onclick="addData(),resetForm();">
                         <i class="ft-x"></i> Add
                     </button>
                     <button type="submit" class="btn btn-primary float-right">
                         <i class="la la-check-square-o"></i> Summit
                     </button>
                 </div>
-
-
-
-
-
             </form>
         </div>
         <!-- /.card-body -->
@@ -116,12 +111,13 @@
 @endsection
 
 @section('pagescript')
-    <script>
+    <script type="text/javascript">
         var store_data = [];
         var index = 0, get_index_for_update = 0, save = true, get_student_id_for_update = 0,get_subject_id_for_update = 0;
         {{-- function --}}
         function addData()
         {
+
             var data = {
                 student_id  : document.getElementById("student_id").value,
                 subject_id  : document.getElementById("subject_id").value,
@@ -130,8 +126,9 @@
                 time_start  : document.getElementById("time_start").value,
                 time_end    : document.getElementById("time_end").value,
                 description : document.getElementById("description").value,
-                student_name: ("#student_id option:selected" ).text(),
-                subject_name: ("#subject_id option:selected" ).text(),
+                student_name: $("#student_id option:selected" ).text(),
+                subject_name: $("#subject_id option:selected" ).text(),
+
             };
             if(save){
                 var rows = "";
@@ -143,10 +140,10 @@
                 index++;
 
             }else {
-                var update_td = `<td>${data.student_id}</td><td>${data.subject_id}</td><td>${data.day}</td><td>${data.status}</td><td>${data.time_start}</td><td>${data.time_end}</td><td>${data.description}</td><td>
+                var update_td = `<td>${data.student_name}</td><td>${data.subject_name}</td><td>${data.day}</td><td>${data.status}</td><td>${data.time_start}</td><td>${data.time_end}</td><td>${data.description}</td><td>
                     <button data-index='${get_index_for_update}' type='button' class='btn-edit btn btn-link'>Edit</button></td>`;
                 $('#att_'+get_index_for_update).html(update_td);
-                save = true
+                save = true;
                 document.getElementById("btn-add").innerHTML = "Add";
             }
 
@@ -158,11 +155,10 @@
                     store_data[index].time_start = data.time_start;
                     store_data[index].time_end = data.time_end;
                     store_data[index].description =data.description;
-                    store_data[index].subject_id = data.subject_name;
-                    store_data[index].student_id =data.student_name;
+                    store_data[index].subject_id = data.subject_id;
+                    store_data[index].student_id =data.student_id;
                 }
             });
-
         }
         $(document).ready(function(){
             {{--Convert data to json--}}
@@ -208,7 +204,7 @@
                 });
             });
         });
-        function reset() {
+        function resetForm() {
             document.getElementById("timestudy_summit").reset();
         }
     </script>

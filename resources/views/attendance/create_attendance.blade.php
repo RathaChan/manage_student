@@ -63,7 +63,7 @@
     </form>
     </div>
 
-@include('content.list_add')
+@include('attendance.list_add')
 {{--@include('content.attendance')--}}
 @endsection
 

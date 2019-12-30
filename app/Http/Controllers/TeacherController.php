@@ -12,9 +12,19 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
+        session(['active_menu' => 'teacher']);
+        if(isset($request->s))
+        {
+            $teachers = Teacher::where('first_name','LIKE',"%$request->s%")->orWhere('last_name','LIKE',"%$request->s%")
+                ->orWhere('gender','LIKE',"$request->s%")->get();
+        }else {
+            $teachers = Teacher::all();        }
+        return view('teacher.index',[
+            'teachers'=>$teachers
+        ]);
     }
 
     /**
@@ -24,7 +34,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('teacher.create');
     }
 
     /**
@@ -35,7 +45,27 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        $params = $request->all();
+//        dd($params);
+        $data = $request->validate([
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'gender'=>'required',
+            'dob'=>'required',
+            'address'=>'required',
+            'education'=>'required',
+            'salary'=>'required',
+            'action'=>'required',
+            'code'=>'required',
+            'email'=>'required',
+        ]);
+
+        $data['image'] = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $data['image'] );
+//        dd($data);
+       Teacher::insert($data);
+        return redirect(url('teachers'))->with('success', 'successfully');
     }
 
     /**
@@ -57,7 +87,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        //
+        return view('teacher.edit', compact('teacher'));
     }
 
     /**
@@ -69,7 +99,15 @@ class TeacherController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        //
+        $datas = $request->all();
+        if (isset( $datas['image'])){
+        $datas['image'] = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $datas['image'] );
+        }
+       // dd($datas);
+        $teacher->update($datas);
+        return redirect(url('/teachers'))->with('success', 'successfully');
+
     }
 
     /**
@@ -80,6 +118,8 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        //
+        $teacher->delete();
+        return redirect(url('/teachers'))->with('success', 'successfully');
+
     }
 }

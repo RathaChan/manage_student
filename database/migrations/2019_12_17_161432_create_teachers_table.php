@@ -15,7 +15,7 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string(' code');
+            $table->string('code');
             $table->string('image');
             $table->string('first_name');
             $table->string('last_name');
@@ -23,9 +23,8 @@ class CreateTeachersTable extends Migration
             $table->date('dob');
             $table->string('address');
             $table->string('email');
-            $table->string(' education');
+            $table->string('education');
             $table->double('salary');
-            $table->integer('time_study_id');
             $table->enum('action',['enable','disable']);
             $table->timestamps();
         });

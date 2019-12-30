@@ -15,7 +15,7 @@ class AttendanceController extends Controller
      */
     public function editAttend(Attendance $attend, Students $student){
 //    $attend = Attendance::with('students')->get();
-        return view('content.edit_attend',compact('attend', 'student'));
+        return view('attendance.edit_attend',compact('attend', 'student'));
     }
 
     public function index(Request $request)
@@ -30,17 +30,17 @@ class AttendanceController extends Controller
 //        return view('content.attendance',compact('attendances'));
         $attends = Attendance::with('students')->get();
 //        dd($attends);
-        return view('content.attendance',compact('attends','attendances'));
+        return view('attendance.attendance',compact('attends','attendances'));
     }
     public function index1()
     {
         session(['active_menu' => 'create_attend']);
         $student = Students::all();
-        return view('content.create_attendance',compact('student'));
+        return view('attendance.create_attendance',compact('student'));
     }
     public function getData(){
 
-        return view('content.list_add');
+        return view('attendance.list_add');
     }
 
     /**
@@ -50,7 +50,7 @@ class AttendanceController extends Controller
      */
     public function create()
     {
-        return view('content.create_attendance');
+        return view('attendance.create_attendance');
     }
 
     /**

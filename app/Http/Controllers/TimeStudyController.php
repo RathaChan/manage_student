@@ -83,7 +83,7 @@ class TimeStudyController extends Controller
         $params = $request->all();
         $params['time_start'] = $this->hoursToMinutes2($params['time_start']);
         $params['time_end'] = $this->hoursToMinutes2($params['time_end']);
-        dd($params);
+//        dd($params);
         \App\TimeStudy::create($params);
         return redirect('/time_study')->with('success','successfully');
 /*       Insert direct to database */

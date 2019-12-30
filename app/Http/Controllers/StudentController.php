@@ -31,7 +31,7 @@ class StudentController extends Controller
         }else {
             $students = Students::all();
         }
-        return view('content.list', compact('students'));
+        return view('student.list', compact('students'));
     }
 
     /**
@@ -42,7 +42,7 @@ class StudentController extends Controller
     public function create()
     {
         session(['active_menu' => 'create_student']);
-        return view('content.create');
+        return view('student.create');
     }
 
     /**
@@ -89,7 +89,7 @@ class StudentController extends Controller
     public function edit(Students $student)
     {
 
-        return view('content.edit_student',compact('student'));
+        return view('student.edit_student',compact('student'));
 
     }
 
@@ -103,8 +103,11 @@ class StudentController extends Controller
     public function update(Request $request, Students $student)
     {
         $data = $request->all();
-        $data['image'] = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images'), $data['image'] );
+        if (isset($data['image'])){
+            $data['image'] = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $data['image'] );
+        }
+
 //        dd($data['image']);
         $student->update($data);
         return redirect('/students')->with('success','successfully');
